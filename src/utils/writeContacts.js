@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 
 export const writeContacts = async (updatedContacts) => {
     try {
-        return await fs.writeFile(PATH_DB, updatedContacts, { encoding: "utf-8" });
+        return await fs.writeFile(PATH_DB, JSON.stringify(updatedContacts, undefined, 2));
     }
     catch (error) {
         console.log(error);
